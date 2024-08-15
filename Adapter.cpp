@@ -1,46 +1,42 @@
 #include <iostream>
 
-class ILion {
+class ILion
+{
 public:
-    virtual void Roar() {
-        std::cout << "I am a Lion" << std::endl;
-    }
+	virtual void Roar() { std::cout << "I am a Lion" << std::endl; }
 };
 
-class Hunter {
+class Hunter
+{
 public:
-    void Hunt(ILion& lion) {
-        lion.Roar();
-    }
+	void Hunt(ILion &lion) { lion.Roar(); }
 };
 
 class WildDog
 {
 public:
-    void Bark() {
-        std::cout << "I am a wild dog." << std::endl;
-    }
+	void Bark() { std::cout << "I am a wild dog." << std::endl; }
 };
 
 //! now we added a new class `WildDog`, the hunter can hunt it also.
 //! But we cannot do that directly because dog has a different interface.
 //! To make it compatible for our hunter, we will have to create an adapter.
 
-class WildDogAdapter : public ILion {
+class WildDogAdapter : public ILion
+{
 public:
-    WildDogAdapter(WildDog& dog): dog_(dog) {}
-    void Roar() override {
-        dog_.Bark();
-    }
+	WildDogAdapter(WildDog &dog) : dog_(dog) {}
+	void Roar() override { dog_.Bark(); }
+
 private:
-    WildDog& dog_;
+	WildDog &dog_;
 };
 
 int main()
 {
-    WildDog dog;
-    WildDogAdapter dogAdapter(dog);
+	WildDog dog;
+	WildDogAdapter dogAdapter(dog);
 
-    Hunter hunter;
-    hunter.Hunt(dogAdapter);
+	Hunter hunter;
+	hunter.Hunt(dogAdapter);
 }
