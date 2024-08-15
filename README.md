@@ -1,15 +1,31 @@
-# Design Patterns
+Design Patterns in C++
+======================
 
-[![Build Status](https://travis-ci.org/pezy/DesignPatterns.svg?branch=master)](https://travis-ci.org/pezy/DesignPatterns)
-[![Build Status](https://ci.appveyor.com/api/projects/status/yy7k6woeksa2gmee/branch/master?svg=true)](https://ci.appveyor.com/project/pezy/designpatterns)
+Example implementations of design patterns in C++ to help prepare for
+interviews and use it software development tasks.
 
-Simple example code for [Design Patterns for Humans's chinese and C++ version](https://pushmind.org/2017/07/31/design-patterns-for-humans/).
+Build & test
+------------
 
-Install [CMake](https://cmake.org/) at first.
+This repository uses Gnu Makefile to build & test, format source code.
 
-```sh
-cd DesignPatterns
-mkdir build && cd build
-cmake ..
-make
+```bash
+make Singleton        # build a test binary from .cpp source file
+make Singleton-check  # run the test binary
+make Singleton-format # format .cpp source file
+
+SHOW_TEST_OUTPUT=1 make Singleton-check # run test with debug output
 ```
+
+Test output format
+------------------
+
+```text
+$ make <DP-name>-check  # run the test binary
+Test <DP-name> Design Pattern with N tests.
+```
+
+Credits
+-------
+
+* [pezy/DesignPatterns] (https://github.com/pezy/DesignPatterns)

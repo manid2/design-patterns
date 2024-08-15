@@ -1,0 +1,29 @@
+name: Design patterns in C++
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: false
+          fetch-depth: 50
+
+      - name: Build & run tests
+        run: |
+          make
