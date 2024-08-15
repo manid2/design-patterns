@@ -28,4 +28,6 @@ Test <DP-name> Design Pattern with N tests.
 Credits
 -------
 
-* [pezy/DesignPatterns] (https://github.com/pezy/DesignPatterns)
+* [pezy/DesignPatterns][1]: most code is borrowed from this repository.
+
+[1]: https://github.com/pezy/DesignPatterns
